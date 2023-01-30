@@ -33,21 +33,24 @@ entradaDados.question('Digite o valor1 : \n', function (valor1) {
                 console.log("Erro, valores incorretos");
             }
             else if (operador === '-') {
-                let resultado = valor1-valor2;
+                let resultado = PrimeiroValor-SegundoValor
                 console.log(resultado);
             }
             else if(operador === '/') {
-                let resultado = valor1/valor2
+                let resultado = PrimeiroValor/SegundoValor
                 console.log(resultado);
             }
             else if (operador === 'x') {
-                let resultado = valor1*valor2
+                let resultado = PrimeiroValor*SegundoValor
                 console.log(resultado);
             }
             else if(operador == '+'){
                 let resultado = PrimeiroValor + SegundoValor
                 console.log(resultado);
             }   
+            else{
+                console.log("erro, operador incorreto!");
+            }
 })
 }
 )
