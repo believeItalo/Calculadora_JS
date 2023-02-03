@@ -1,5 +1,6 @@
 console.log('Sistema de Cálculo');
 
+const { parse } = require('path');
 const { stdin, stdout } = require('process');
 
 
@@ -17,7 +18,8 @@ var entradaDados = readline.createInterface({
 entradaDados.question('Digite o valor1 : \n', function (valor1) {
 
     //função de callback
-    let PrimeiroValor = Number(valor1);
+    let PrimeiroValor = parseFloat(valor1.replace(",", "."));
+
 
     entradaDados.question('Digite o Operador : \n ', function (operador) {
 
@@ -25,11 +27,10 @@ entradaDados.question('Digite o valor1 : \n', function (valor1) {
 
         entradaDados.question('Digite o valor2 : \n ', function (valor2) {
 
-            let SegundoValor = Number(valor2);
-
-
+            let SegundoValor = parseFloat(valor2.replace(",", "."));
+           
             
-            if(valor1 == ' ' || valor2 == ' ' || isNaN(valor1) || isNaN(valor2)){
+            if(PrimeiroValor == ' ' || SegundoValor == ' ' || isNaN(PrimeiroValor) || isNaN(SegundoValor)){
                 console.log("Erro, valores incorretos");
             }
             else if (operador === '-') {
